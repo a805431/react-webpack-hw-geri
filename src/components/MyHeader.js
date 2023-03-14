@@ -17,6 +17,7 @@ const ImageStyles = styled.img`
 
 const H1Styles = styled.h1`
   text-align: left;
+  margin: 0;
 `;
 
 function MyHeader({ title, image, altDesc }) {

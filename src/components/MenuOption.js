@@ -1,12 +1,26 @@
-function MenuOption({ title, image, altDesc }) {
+import styled from 'styled-components';
 
-   // return (<a href="#" class="navbar__link">
-   //    <span class="material-symbols-outlined">
-   //       home</span>{title}
-   // </a>);
-   return (<a href="#" className="navbar-link">
-   <span><img src={image} alt={altDesc}/></span>{title}
-</a>);
+const NavbarLinkStyles = styled.a`
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px solid #ffffff;
+  color: #696969;
+  font-size: 0.85rem;
+`;
+
+function MenuOption({ title, image, altDesc }) {
+  return (
+    <NavbarLinkStyles href="#" className="navbar-link">
+      <span>
+        <img src={image} alt={altDesc} />
+      </span>
+      {title}
+    </NavbarLinkStyles>
+  );
 }
 
 export default MenuOption;

@@ -1,19 +1,15 @@
 import MenuOption from "./components/MenuOption";
+import MyHeader from "./components/MyHeader";
 import HeaderImage from "./assets/images/headerImage.jpg";
 import AtFarmLogo from "./assets/images/at_farm_logo.png";
-
-console.log(HeaderImage);
-console.log(AtFarmLogo);
 
 function App() {
    return (
       <div>
-         <div>This is a Mock Header</div>
-         <img src={HeaderImage} />
-         <img src={AtFarmLogo} />
-         <MenuOption title="Current Farm" />
-         <MenuOption title="Fields" />
-         <MenuOption title="Nutrition Plan" />
+         <MyHeader title="This is a Mock Header" image={HeaderImage} altDesc="header image"/>
+         <MenuOption title="Current Farm" image={AtFarmLogo} altDesc="current farm"/>
+         <MenuOption title="Fields" image={AtFarmLogo} altDesc="nutrition plan"/>
+         <MenuOption title="Nutrition Plan" image={AtFarmLogo}/>
       </div>
    );
 }

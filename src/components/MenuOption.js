@@ -12,11 +12,15 @@ const NavbarLinkStyles = styled.a`
   font-size: 0.85rem;
 `;
 
+const ImgStyles = styled.img`
+  margin-right: 15px;
+`;
+
 function MenuOption({ title, image, altDesc }) {
   return (
     <NavbarLinkStyles href="#" className="navbar-link">
       <span>
-        <img src={image} alt={altDesc} />
+        <ImgStyles className="imageIcon" src={image} alt={altDesc} />
       </span>
       {title}
     </NavbarLinkStyles>

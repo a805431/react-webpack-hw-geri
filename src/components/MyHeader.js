@@ -6,7 +6,7 @@ const HeaderStyles = styled.header`
   height: 120px;
   width: 100%;
   text-align: center;
-  margin: 0 0 10px;
+  margin: 0;
 `;
 
 const ImageStyles = styled.img`

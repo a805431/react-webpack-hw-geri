@@ -16,7 +16,7 @@ function App() {
         altDesc="header image"
       />
       <div className="container">
-        <div class="navbar">
+        <div className="navbar">
           <MenuOption
             title="Current Farm"
             image={AtFarmLogo}

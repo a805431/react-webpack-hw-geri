@@ -16,9 +16,7 @@ function FormCategory() {
 
     if (description === '') {
       setMessage('Value of Farm notes is required!');
-    } else if (farmId === '') {
-      setMessage('Value of Farm ID is required!');
-    } else {
+    }else {
       if (regexpr.test(description)) {
         setMessage(description);
       } else {

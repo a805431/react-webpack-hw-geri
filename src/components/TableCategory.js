@@ -19,9 +19,7 @@ function TableCategory() {
           </tr>
         </tbody>
       </table>
-      <section>
-        <button>Add New Item</button>
-      </section>
+      <button id="add-btn-table-category">Add New Item</button>
     </>
   );
 }

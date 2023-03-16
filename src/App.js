@@ -5,6 +5,7 @@ import AtFarmLogo from './assets/images/at_farm_logo.png';
 import GlobalCSS from './styles/global.css.js';
 import React, { Fragment } from 'react';
 import FormCategory from './components/FormCategory';
+import TableCategory from './components/TableCategory';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
         <div className="flex-container">
           <FormCategory />
         </div>
+      </div>
+      <div className="flex-container">
+        <TableCategory />
       </div>
     </Fragment>
   );

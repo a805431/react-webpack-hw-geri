@@ -15,4 +15,7 @@ body{
     width: 200px;
     background: rgb(255,255,255);
     border-right: 1px solid #C0C0C0;
+}
+table, th, td {
+    border: 1px solid black;
 }`;

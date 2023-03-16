@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
 body{
@@ -33,4 +33,22 @@ table, th, td {
     background-color: rgb(238, 207, 69);
     border-color: rgb(206, 128, 39);
     font-weight: bold;
+}
+.gray-modal-background{
+    position: absolute; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; 
+    background-color: #D1D5DB; 
+    opacity: 0.8; 
+}
+.while-modal-area{
+    position: absolute; 
+    top: 10rem;
+    right: 10rem;
+    bottom: 10rem;
+    left: 10rem; 
+    padding: 2.5rem; 
+    background-color: #ffffff; 
 }`;

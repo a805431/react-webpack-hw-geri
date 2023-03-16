@@ -1,6 +1,25 @@
 import { useState } from 'react';
+import Modal from './modal/Modal';
 
 function TableCategory() {
+  const [showModal, setShowModal] = useState(false);
+
+  //this eventhandler will be called anytime a user clicks on a button 
+  //whenever handleClick is called, showModal state will be updated
+  const handleClick = () => {
+    setShowModal(true);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
+  const actionBar = <div><button onClick={ handleClose }>Save</button></div>
+  //children prop is the jsx inside the Modal tags
+  const modal = <Modal onClose={handleClose} actionBar={actionBar}>
+    <p>Form Placeholder</p>
+  </Modal>
+
   return (
     <>
       <table>
@@ -19,7 +38,8 @@ function TableCategory() {
           </tr>
         </tbody>
       </table>
-      <button id="add-btn-table-category">Add New Item</button>
+      <button id="add-btn-table-category" onClick={handleClick}>Add New Item</button>
+      {showModal && modal}
     </>
   );
 }

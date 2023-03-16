@@ -6,6 +6,7 @@ import Home from './components/Home';
 import NotFound from './components/NotFound';
 import FormCategory from './components/FormCategory.js';
 import TableCategory from './components/TableCategory.js';
+import ModalPage from './components/modal/ModalPage.js';
 
 function App() {
   return (
@@ -18,7 +19,6 @@ function App() {
           <Route exact path="fields" element={<TableCategory />} />
           <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,43 +1,26 @@
-import MenuOption from './components/MenuOption';
-import MyHeader from './components/MyHeader';
-import HeaderImage from './assets/images/headerImage.jpg';
-import AtFarmLogo from './assets/images/at_farm_logo.png';
 import GlobalCSS from './styles/global.css.js';
-import React, { Fragment } from 'react';
-import FormCategory from './components/FormCategory';
-import TableCategory from './components/TableCategory';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Container from './components/Container.js';
+import Home from './components/Home';
+import NotFound from './components/NotFound';
+import FormCategory from './components/FormCategory.js';
+import TableCategory from './components/TableCategory.js';
 
 function App() {
   return (
-    <Fragment>
+    <BrowserRouter>
       <GlobalCSS />
-      <MyHeader
-        title="This is a Mock Header"
-        image={HeaderImage}
-        altDesc="header image"
-      />
-      <div className="container">
-        <div className="navbar">
-          <MenuOption
-            title="Current Farm"
-            image={AtFarmLogo}
-            altDesc="current farm"
-          />
-          <MenuOption
-            title="Fields"
-            image={AtFarmLogo}
-            altDesc="nutrition plan"
-          />
-          <MenuOption title="Nutrition Plan" image={AtFarmLogo} />
-        </div>
-        <div className="flex-container">
-          <FormCategory />
-        </div>
-      </div>
-      <div className="flex-container">
-        <TableCategory />
-      </div>
-    </Fragment>
+      <Routes>
+        <Route path="/" element={<Container />}>
+          <Route index element={<Home/>}/>
+          <Route exact path="current-farm" element={<FormCategory />} />
+          <Route exact path="fields" element={<TableCategory />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

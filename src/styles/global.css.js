@@ -4,10 +4,10 @@ export default createGlobalStyle`
 body{
     margin: 0;
 }
-.container{
+.main-container{
     height: 100%;
 }
-.container, .flex-container{
+.main-container, .flex-container{
     display: flex;
 }
 .navbar{

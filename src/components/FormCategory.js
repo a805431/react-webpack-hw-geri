@@ -48,7 +48,8 @@ function FormCategory() {
     }
   };
 
-  const handleCancel = () => {
+  const handleCancel = (event) => {
+    event.preventDefault();
     setDescription('');
     setFarmId('');
     setMessage([]);

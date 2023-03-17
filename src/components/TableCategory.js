@@ -1,11 +1,34 @@
 import { useState } from 'react';
 import FormCategory from './FormCategory';
 import Modal from './modal/Modal';
+import Table from './table/Table';
 
 function TableCategory() {
+  const tableData = [
+    {
+      farmId: '11111',
+      farmNotes: 'Mock description of Farm 11111',
+    },
+    {
+      farmId: '22222',
+      farmNotes: 'Mock description of Farm 22222',
+    },
+  ];
+
+  const config = [
+    {
+      label: 'Farm ID',
+      render: (farm) => farm.farmId
+    },
+    {
+      label: 'Farm notes',
+      render: (farm) => farm.farmNotes
+    },
+  ];
+
   const [showModal, setShowModal] = useState(false);
 
-  //this eventhandler will be called anytime a user clicks on a button 
+  //this eventhandler will be called anytime a user clicks on a button
   //whenever handleClick is called, showModal state will be updated
   const handleClick = () => {
     setShowModal(true);
@@ -15,31 +38,24 @@ function TableCategory() {
     setShowModal(false);
   };
 
-  const actionBar = <div><button onClick={ handleClose }>Close</button></div>
+  const actionBar = (
+    <div>
+      <button onClick={handleClose}>Close</button>
+    </div>
+  );
   //children prop is the jsx inside the Modal tags
-  const modal = <Modal onClose={handleClose} actionBar={actionBar}>
-    <FormCategory />
-  </Modal>
+  const modal = (
+    <Modal onClose={handleClose} actionBar={actionBar}>
+      <FormCategory />
+    </Modal>
+  );
 
   return (
     <>
-      <table>
-        <tbody>
-          <tr>
-            <th>Farm ID</th>
-            <th>Farm notes</th>
-          </tr>
-          <tr>
-            <td>11111</td>
-            <td>Mock description of Farm 11111</td>
-          </tr>
-          <tr>
-            <td>22222</td>
-            <td>Mock description of Farm 22222</td>
-          </tr>
-        </tbody>
-      </table>
-      <button id="add-btn-table-category" onClick={handleClick}>Add New Item</button>
+      <Table data={tableData} config={config}/>
+      <button id="add-btn-table-category" onClick={handleClick}>
+        Add New Item
+      </button>
       {showModal && modal}
     </>
   );

@@ -15,6 +15,7 @@ function Modal({ onClose, children, actionBar }) {
       <div onClick={onClose} className="gray-modal-background"></div>
       <div className="while-modal-area">
         {children}
+        <div style={{marginBottom:"30px"}}></div>
         {actionBar}
       </div>
     </div>,

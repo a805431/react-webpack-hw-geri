@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import FormCategory from './FormCategory';
 import Modal from './modal/Modal';
 
 function TableCategory() {
@@ -14,10 +15,10 @@ function TableCategory() {
     setShowModal(false);
   };
 
-  const actionBar = <div><button onClick={ handleClose }>Save</button></div>
+  const actionBar = <div><button onClick={ handleClose }>Close</button></div>
   //children prop is the jsx inside the Modal tags
   const modal = <Modal onClose={handleClose} actionBar={actionBar}>
-    <p>Form Placeholder</p>
+    <FormCategory />
   </Modal>
 
   return (

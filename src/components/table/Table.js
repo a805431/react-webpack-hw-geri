@@ -1,13 +1,17 @@
-function Table({ data, config }) {
+function Table({ data, config, keyFn }) {
   const renderedHeaders = config.map((column) => {
     return <th key={column.label}>{column.label}</th>;
   });
 
-  const renderedRows = data.map((farm) => {
+  const renderedRows = data.map((rowData) => {
+    //column is each config object in TableCategory
+    const renderedCells = config.map((column) => {
+        return (<td key={column.label}>{column.render(rowData)}</td>);
+    });
+
     return (
-      <tr key={farm.farmId}>
-        <td>{config[0].render(farm)}</td>
-        <td>{farm.farmNotes}</td>
+      <tr key={keyFn(rowData)}>
+        {renderedCells}
       </tr>
     );
   });

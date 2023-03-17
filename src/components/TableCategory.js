@@ -26,6 +26,11 @@ function TableCategory() {
     },
   ];
 
+  //function taht return the value, suitable for use as a key
+  const keyFn = (farm) => {
+    return farm.farmId;
+  };
+
   const [showModal, setShowModal] = useState(false);
 
   //this eventhandler will be called anytime a user clicks on a button
@@ -49,10 +54,10 @@ function TableCategory() {
       <FormCategory />
     </Modal>
   );
-
+  
   return (
     <>
-      <Table data={tableData} config={config}/>
+      <Table data={tableData} config={config} keyFn={keyFn}/>
       <button id="add-btn-table-category" onClick={handleClick}>
         Add New Item
       </button>

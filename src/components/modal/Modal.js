@@ -2,6 +2,12 @@ import ReactDOM from 'react-dom';
 import { useEffect } from 'react';
 
 function Modal({ onClose, children, actionBar }) {
+  //the idea is for this function to receive some term from the child component
+  //which is in this case FromCategory
+  const handleSubmit = (term) => {
+
+  }
+
   useEffect(() => {
     document.body.classList.add('overflow-hidden');
 

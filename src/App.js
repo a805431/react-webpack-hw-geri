@@ -6,7 +6,6 @@ import Home from './components/Home';
 import NotFound from './components/NotFound';
 import FormCategory from './components/FormCategory.js';
 import TableCategory from './components/TableCategory.js';
-import ModalPage from './components/modal/ModalPage.js';
 
 function App() {
   return (

@@ -35,7 +35,7 @@ table, th, td {
     font-weight: bold;
 }
 .gray-modal-background{
-    position: absolute; 
+    position: fixed; 
     top: 0;
     right: 0;
     bottom: 0;
@@ -44,11 +44,14 @@ table, th, td {
     opacity: 0.8; 
 }
 .while-modal-area{
-    position: absolute; 
+    position: fixed; 
     top: 10rem;
     right: 10rem;
     bottom: 10rem;
     left: 10rem; 
     padding: 2.5rem; 
     background-color: #ffffff; 
+}
+.overflow-hidden{
+    overflow: hidden;
 }`;

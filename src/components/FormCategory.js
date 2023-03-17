@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function FormCategory() {
+function FormCategory({ onSubmit }) {
   //съобщение в резултат от валидацията
   const [message, setMessage] = useState([]);
 
@@ -43,6 +43,7 @@ function FormCategory() {
     //if errorBuffer is empty, meaning length === 0
     if (!errorBuffer.length) {
       setMessage(summaryBuffer);
+      onSubmit? onSubmit({farmId: farmId, farmNotes: description}): console.log('No onSubmit prop passed');//added this line as test
     } else if (errorBuffer.length >= 1) {
       setMessage(errorBuffer);
     }

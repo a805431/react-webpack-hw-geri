@@ -16,8 +16,9 @@ function App() {
           <Route index element={<Home/>}/>
           <Route exact path="current-farm" element={<FormCategory />} />
           <Route exact path="fields" element={<TableCategory />} />
-          <Route path="*" element={<NotFound />} />
+          <Route exact path="nutrition-plan" element={<NotFound />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

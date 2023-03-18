@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import MyHeader from './MyHeader';
 import HeaderImage from '../assets/images/headerImage.jpg';
-import Navbar from './Navbar';
+import Navbar from './Navbar/Navbar';
 import { Outlet } from 'react-router-dom';
 
 function Container() {

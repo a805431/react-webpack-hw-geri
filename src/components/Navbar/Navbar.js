@@ -1,5 +1,5 @@
 import MenuOption from './MenuOption';
-import AtFarmLogo from '../assets/images/at_farm_logo.png';
+import AtFarmLogo from '../../assets/images/at_farm_logo.png';
 
 function Navbar() {
   const menuOptionsProps = [

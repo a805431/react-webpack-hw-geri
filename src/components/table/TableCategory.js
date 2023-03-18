@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import FormCategory from './FormCategory';
-import Modal from './modal/Modal';
-import Table from './table/Table';
+import FormCategory from '../Form/FormCategory';
+import Modal from '../Modal/Modal';
+import Table from './Table';
 
 function TableCategory() {
   let tableData = [

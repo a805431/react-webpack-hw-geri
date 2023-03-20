@@ -2,10 +2,21 @@ import { IncrementButton, ButtonWrapper, NumberInput } from './counterPage.css';
 import { useReducer } from 'react';
 
 const reducer = (state, action) => {
-  return {
-    ...state,
-    count: state.count + 1,
-  };
+  if (action.type === 'increment') {
+    return {
+      ...state,
+      count: state.count + 1,
+    };
+  }
+
+  if (action.type === 'change-value-to-add') {
+    return {
+      ...state,
+      valueToAdd: action.payload,
+    };
+  }
+
+  return state;
 };
 
 function CounterPage({ initialCount }) {
@@ -18,7 +29,9 @@ function CounterPage({ initialCount }) {
   console.log(state);
 
   const increment = () => {
-    dispatch();
+    dispatch({
+      type: 'increment',
+    });
   };
 
   const decrement = () => {
@@ -29,7 +42,11 @@ function CounterPage({ initialCount }) {
     //if we get back NaN for event.target.value, which is a falsy value
     //we will assign 0 instead to the value variable
     const value = parseInt(event.target.value) || 0;
-    // setValueToAdd(value);
+
+    dispatch({
+      type: 'change-value-to-add',
+      payload: value,
+    });
   };
 
   const handleSubmit = (event) => {

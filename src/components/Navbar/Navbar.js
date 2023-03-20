@@ -17,6 +17,11 @@ function Navbar() {
       routePath: "/nutrition-plan",
         title: "Nutrition Plan",
         altDesc: "nutrition plan"
+    },
+    {
+      routePath: "/counter",
+      title: "Counter",
+      altDesc: "counter"
     }
   ];
 

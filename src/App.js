@@ -6,6 +6,7 @@ import Home from './components/Other-Pages/Home';
 import NotFound from './components/Other-Pages/NotFound';
 import FormCategory from './components/Form/FormCategory.js';
 import TableCategory from './components/Table/TableCategory.js';
+import CounterPage from './components/Counter/CounterPage.js';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="current-farm" element={<FormCategory />} />
           <Route exact path="fields" element={<TableCategory />} />
           <Route exact path="nutrition-plan" element={<NotFound />} />
+          <Route exact path="counter" element={<CounterPage initialCount={10}/>} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

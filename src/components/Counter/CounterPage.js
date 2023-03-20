@@ -1,36 +1,45 @@
 import { IncrementButton, ButtonWrapper, NumberInput } from './counterPage.css';
-import { useState } from 'react';
+import { useReducer } from 'react';
+
+const reducer = (state, action) => {
+  //
+};
 
 function CounterPage({ initialCount }) {
-  const [count, setCount] = useState(initialCount);
-  const [valueToAdd, setValueToAdd] = useState(0);
+  // const [count, setCount] = useState(initialCount);
+  // const [valueToAdd, setValueToAdd] = useState(0);
+  const [state, dispatch] = useReducer(reducer, {
+    count: initialCount,
+    valueToAdd: 0,
+  });
+  console.log(state);
 
   const increment = () => {
-    setCount(count + 1);
+    // setCount(count + 1);
   };
 
   const decrement = () => {
-    setCount(count - 1);
+    // setCount(count - 1);
   };
 
   const handleChange = (event) => {
     //if we get back NaN for event.target.value, which is a falsy value
     //we will assign 0 instead to the value variable
     const value = parseInt(event.target.value) || 0;
-    setValueToAdd(value);
+    // setValueToAdd(value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setCount(count + valueToAdd);
-    setValueToAdd(0);
-  }
+    // setCount(count + valueToAdd);
+    // setValueToAdd(0);
+  };
 
   return (
     <div style={{ margin: '0.75rem' }}>
       <h1 style={{ fontSize: '1.125rem', lineHeight: '1.75rem' }}>
-        Count is {count}
+        Count is {state.count}
       </h1>
       <ButtonWrapper>
         <IncrementButton onClick={increment}>Increment</IncrementButton>
@@ -43,7 +52,7 @@ function CounterPage({ initialCount }) {
         just put in empty string instead*/}
         <NumberInput
           type="number"
-          value={valueToAdd || ''}
+          value={state.valueToAdd || ''}
           onChange={handleChange}
         />
         <IncrementButton>Add it!</IncrementButton>

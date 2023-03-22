@@ -2,7 +2,9 @@ import { IncrementButton, ButtonWrapper, NumberInput } from './counterPage.css';
 import { useReducer } from 'react';
 
 const INCREMENT_COUNT = 'increment';
+const DECREMENT_COUNT = 'decrement';
 const SET_VALUE_TO_ADD = 'set-value-to-add';
+const ADD_VALUE_TO_COUNT = 'add-value-to-count';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -11,31 +13,27 @@ const reducer = (state, action) => {
         ...state,
         count: state.count + 1,
       };
+    case ADD_VALUE_TO_COUNT:
+      return {
+        ...state,
+        count: state.count + state.valueToAdd,
+        valueToAdd: 0
+      };
     case SET_VALUE_TO_ADD:
       return {
         ...state,
         valueToAdd: action.payload,
       };
+    case DECREMENT_COUNT:
+      return {
+        ...state,
+        count: state.count - 1,
+      };
     default:
-      //the alternatives are to throw an error or to return the state 
+      //the alternatives are to throw an error or to return the state
       //throw new Error('unexpected action type: ' + action.type);
       return state;
   }
-  // if (action.type === INCREMENT_COUNT) {
-  //   return {
-  //     ...state,
-  //     count: state.count + 1,
-  //   };
-  // }
-
-  // if (action.type === SET_VALUE_TO_ADD) {
-  //   return {
-  //     ...state,
-  //     valueToAdd: action.payload,
-  //   };
-  // }
-
-  // return state;
 };
 
 function CounterPage({ initialCount }) {
@@ -54,7 +52,9 @@ function CounterPage({ initialCount }) {
   };
 
   const decrement = () => {
-    // setCount(count - 1);
+    dispatch({
+      type: DECREMENT_COUNT,
+    });
   };
 
   const handleChange = (event) => {
@@ -71,8 +71,9 @@ function CounterPage({ initialCount }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // setCount(count + valueToAdd);
-    // setValueToAdd(0);
+    dispatch({
+      type: ADD_VALUE_TO_COUNT,
+    });
   };
 
   return (

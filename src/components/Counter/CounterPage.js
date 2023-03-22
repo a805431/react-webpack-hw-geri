@@ -1,5 +1,6 @@
 import { IncrementButton, ButtonWrapper, NumberInput } from './counterPage.css';
-import { useReducer } from 'react';
+import { useContext, useReducer } from 'react';
+import FarmsContext from '../../context/farms';
 
 const INCREMENT_COUNT = 'increment';
 const DECREMENT_COUNT = 'decrement';
@@ -37,6 +38,7 @@ const reducer = (state, action) => {
 };
 
 function CounterPage({ initialCount }) {
+  const value = useContext(FarmsContext);
   // const [count, setCount] = useState(initialCount);
   // const [valueToAdd, setValueToAdd] = useState(0);
   const [state, dispatch] = useReducer(reducer, {
@@ -97,6 +99,7 @@ function CounterPage({ initialCount }) {
         />
         <IncrementButton>Add it!</IncrementButton>
       </form>
+      {value}
     </div>
   );
 }
